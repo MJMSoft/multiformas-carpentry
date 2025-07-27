@@ -1,0 +1,94 @@
+---
+export interface Stat {
+  number: string;
+  label: string;
+  suffix?: string;
+}
+
+export interface Props {
+  title?: string;
+  stats: Stat[];
+  bgColor?: string;
+  accentColor?: string;
+}
+
+const { 
+  title,
+  stats, 
+  bgColor = 'bg-gray-900',
+  accentColor = 'from-blue-500 to-purple-500'
+} = Astro.props;
+---
+
+<section class={`py-20 ${bgColor} relative overflow-hidden`}>
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+  </div>
+  
+  <div class="container mx-auto px-4 lg:px-8 relative z-10">
+    {title && (
+      <h2 class={`text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 animate-on-scroll ${
+        bgColor?.includes('bg-amber-50') || bgColor?.includes('bg-white') || bgColor?.includes('bg-gray-50') 
+          ? 'text-gray-900' 
+          : 'text-white'
+      }`}>
+        {title}
+      </h2>
+    )}
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat, index) => (
+        <div 
+          class="text-center animate-on-scroll"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <div class={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br ${accentColor} bg-clip-text text-transparent mb-2`}>
+            <span class="counter" data-target={stat.number}>{stat.number}</span>
+            {stat.suffix && <span>{stat.suffix}</span>}
+          </div>
+          <p class={`text-sm md:text-base ${
+            bgColor?.includes('bg-amber-50') || bgColor?.includes('bg-white') || bgColor?.includes('bg-gray-50') 
+              ? 'text-gray-600' 
+              : 'text-gray-300'
+          }`}>{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+  
+  const countUp = (counter: Element) => {
+    const target = +(counter.getAttribute('data-target') || '0');
+    const count = +counter.textContent!;
+    const increment = target / speed;
+    
+    if (count < target) {
+      counter.textContent = Math.ceil(count + increment).toString();
+      setTimeout(() => countUp(counter), 10);
+    } else {
+      counter.textContent = target.toString();
+    }
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target.querySelector('.counter');
+        if (counter) {
+          counter.textContent = '0';
+          countUp(counter);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => {
+    const parent = counter.closest('.animate-on-scroll');
+    if (parent) observer.observe(parent);
+  });
+</script>

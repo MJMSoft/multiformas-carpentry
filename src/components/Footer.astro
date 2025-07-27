@@ -1,0 +1,68 @@
+---
+export interface Props {
+  companyName: string;
+  year?: number;
+  links?: Array<{ href: string; label: string }>;
+  socials?: Array<{ platform: string; url: string; icon: string }>;
+  bgColor?: string;
+  textColor?: string;
+}
+
+const { 
+  companyName, 
+  year = new Date().getFullYear(),
+  links = [],
+  socials = [],
+  bgColor = 'bg-gray-900',
+  textColor = 'text-gray-300'
+} = Astro.props;
+---
+
+<footer class={`${bgColor} ${textColor} py-12`}>
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="text-white font-bold text-xl mb-4">{companyName}</h3>
+        <p class="text-sm">
+          Brindando servicios profesionales con excelencia y dedicación. Tu satisfacción es nuestra prioridad.
+        </p>
+      </div>
+      
+      {links.length > 0 && (
+        <div>
+          <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2">
+            {links.map(link => (
+              <li>
+                <a href={link.href} class="hover:text-white transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      
+      {socials.length > 0 && (
+        <div>
+          <h4 class="text-white font-semibold mb-4">Síguenos</h4>
+          <div class="flex space-x-4">
+            {socials.map(social => (
+              <a 
+                href={social.url} 
+                class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
+                aria-label={social.platform}
+              >
+                <span class="text-xl">{social.icon}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+    
+    <div class="border-t border-gray-800 pt-8 text-center text-sm">
+      <p>&copy; {year} {companyName}. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

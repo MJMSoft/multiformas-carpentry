@@ -1,0 +1,71 @@
+---
+export interface Service {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  title: string;
+  subtitle: string;
+  services: Service[];
+  bgColor?: string;
+  cardStyle?: 'elevated' | 'bordered' | 'gradient';
+  accentColor?: string;
+}
+
+const { 
+  title, 
+  subtitle, 
+  services, 
+  bgColor = 'bg-gray-50',
+  cardStyle = 'elevated',
+  accentColor = 'from-blue-500 to-purple-500'
+} = Astro.props;
+
+const getCardClass = () => {
+  switch(cardStyle) {
+    case 'bordered':
+      return 'bg-white border-2 border-gray-200 hover:border-gray-400';
+    case 'gradient':
+      return `bg-gradient-to-br ${accentColor} text-white`;
+    default:
+      return 'bg-white shadow-lg hover:shadow-2xl';
+  }
+};
+
+const textColor = cardStyle === 'gradient' ? 'text-white' : 'text-gray-900';
+const descColor = cardStyle === 'gradient' ? 'text-gray-100' : 'text-gray-600';
+---
+
+<section class={`py-20 ${bgColor}`} id="services">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        {title}
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        {subtitle}
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div 
+          class={`${getCardClass()} rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 animate-on-scroll`}
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <div class={`text-5xl mb-6 ${cardStyle === 'gradient' ? '' : `bg-gradient-to-br ${accentColor} bg-clip-text text-transparent`}`}>
+            {service.icon}
+          </div>
+          <h3 class={`text-xl font-bold mb-3 ${textColor}`}>
+            {service.title}
+          </h3>
+          <p class={descColor}>
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

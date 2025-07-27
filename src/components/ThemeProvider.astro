@@ -1,0 +1,31 @@
+---
+import { siteConfig } from '../config/site.config';
+
+const { colors } = siteConfig;
+---
+
+<style define:vars={{
+  primaryColor: colors.primary,
+  secondaryColor: colors.secondary,
+  accentColor: colors.accent,
+  primaryDarkColor: colors.primaryDark || colors.secondary,
+  primaryLightColor: colors.primaryLight || colors.accent
+}}>
+  :root {
+    /* Colores principales del tema */
+    --color-primary: var(--primaryColor);
+    --color-secondary: var(--secondaryColor);
+    --color-accent: var(--accentColor);
+    --color-primary-dark: var(--primaryDarkColor);
+    --color-primary-light: var(--primaryLightColor);
+    
+    /* Colores derivados con transparencia */
+    --color-primary-10: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    --color-primary-20: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    --color-primary-50: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    
+    /* Gradientes del tema */
+    --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    --gradient-accent: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  }
+</style>
