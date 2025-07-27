@@ -22,54 +22,109 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative min-h-screen flex items-center py-20 overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100">
-  <div class="container mx-auto px-4 lg:px-8">
-    <div class={`grid lg:grid-cols-2 gap-12 items-center ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
-      <div class={`${imagePosition === 'left' ? 'lg:order-2' : ''}`}>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fade-in animate-on-scroll">
+<section class="relative min-h-screen flex items-center py-20 overflow-hidden bg-white">
+  <!-- Fondo sutil con gradiente -->
+  <div class="absolute inset-0 bg-gradient-to-br from-amber-50/50 via-white to-orange-50/30"></div>
+  
+  <div class="container mx-auto px-4 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+      <!-- Contenido principal -->
+      <div class="text-center lg:text-left">
+        <span class="inline-block px-4 py-2 bg-carpentry-primary/10 text-carpentry-primary rounded-full text-sm font-semibold mb-6 animate-fade-in">
+          Fabricantes de Carpintería en Cali
+        </span>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-slide-up leading-tight">
           {title}
         </h1>
         
-        <p class="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up animate-on-scroll" style="animation-delay: 0.2s;">
+        <p class="text-xl text-gray-600 mb-8 animate-slide-up max-w-lg mx-auto lg:mx-0" style="animation-delay: 0.2s;">
           {subtitle}
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 animate-slide-up animate-on-scroll" style="animation-delay: 0.4s;">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style="animation-delay: 0.4s;">
           <a 
             href={ctaLink}
-            class={`inline-block bg-gradient-to-r ${accentColor} text-white px-8 py-4 rounded-full font-semibold text-lg transform hover:scale-105 transition-all duration-300 hover:shadow-2xl text-center`}
+            class="inline-block bg-carpentry-secondary hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transform hover:scale-105 transition-all duration-300 shadow-lg"
           >
             {ctaText}
           </a>
           <a 
-            href="#services"
-            class="inline-block border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 text-center"
+            href="https://wa.me/573155611943"
+            class="inline-flex items-center gap-2 border-2 border-gray-300 hover:border-green-500 text-gray-700 hover:text-green-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
           >
-            Ver Servicios
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            WhatsApp
           </a>
         </div>
       </div>
       
-      <div class={`relative ${imagePosition === 'left' ? 'lg:order-1' : ''} animate-fade-in animate-on-scroll`} style="animation-delay: 0.3s;">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src={image}
-            alt={imageAlt}
-            class="w-full h-auto object-cover"
-          />
-          <div class={`absolute inset-0 bg-gradient-to-t ${accentColor} opacity-10`}></div>
+      <!-- Mosaico de trabajos realizados -->
+      <div class="relative animate-fade-in lg:block hidden" style="animation-delay: 0.3s;">
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Cocina completa con gabinetes -->
+          <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800"
+              alt="Cocina moderna con gabinetes de madera"
+              class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="absolute bottom-4 left-4 text-white font-semibold">Cocinas Integrales</p>
+            </div>
+          </div>
+          
+          <!-- Dormitorio con closet y muebles -->
+          <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800"
+              alt="Dormitorio con closet y mobiliario de madera"
+              class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="absolute bottom-4 left-4 text-white font-semibold">Closets y Alcobas</p>
+            </div>
+          </div>
+          
+          <!-- Sala con mueble de TV y estantería -->
+          <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800"
+              alt="Sala con centro de entretenimiento y estanterías"
+              class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="absolute bottom-4 left-4 text-white font-semibold">Salas y Entretenimiento</p>
+            </div>
+          </div>
+          
+          <!-- Baño moderno con muebles -->
+          <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800"
+              alt="Baño moderno con gabinetes de madera"
+              class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="absolute bottom-4 left-4 text-white font-semibold">Baños y Vanities</p>
+            </div>
+          </div>
         </div>
-        <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-carpentry-primary to-carpentry-secondary text-white p-6 rounded-2xl shadow-xl">
-          <p class="text-3xl font-bold">20+</p>
-          <p class="text-sm">Años de Experiencia</p>
+        
+        <!-- Badge central -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-6 shadow-2xl">
+          <img src="/images/logo.png" alt="Multiformas Cali" class="w-20 h-20" />
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <svg class="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
+    
+    <!-- Indicador de scroll minimalista -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce lg:block hidden">
+      <div class="w-6 h-10 border-2 border-gray-300 rounded-full p-1">
+        <div class="w-1 h-3 bg-gray-400 rounded-full mx-auto animate-pulse"></div>
+      </div>
+    </div>
   </div>
 </section>

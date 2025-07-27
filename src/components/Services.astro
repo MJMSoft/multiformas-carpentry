@@ -49,19 +49,20 @@ const descColor = cardStyle === 'gradient' ? 'text-gray-100' : 'text-gray-600';
       </p>
     </div>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {services.map((service, index) => (
         <div 
-          class={`${getCardClass()} rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 animate-on-scroll`}
+          class={`${getCardClass()} rounded-3xl p-6 lg:p-8 transition-all duration-300 transform hover:scale-105 hover:rotate-1 animate-on-scroll relative overflow-hidden`}
           style={`animation-delay: ${index * 0.1}s;`}
         >
-          <div class={`text-5xl mb-6 ${cardStyle === 'gradient' ? '' : `bg-gradient-to-br ${accentColor} bg-clip-text text-transparent`}`}>
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-carpentry-primary/10 to-carpentry-secondary/10 rounded-full blur-3xl"></div>
+          <div class={`text-5xl mb-6 ${cardStyle === 'gradient' ? '' : `bg-gradient-to-br ${accentColor} bg-clip-text text-transparent`} relative z-10`}>
             {service.icon}
           </div>
-          <h3 class={`text-xl font-bold mb-3 ${textColor}`}>
+          <h3 class={`text-xl font-bold mb-3 ${textColor} relative z-10`}>
             {service.title}
           </h3>
-          <p class={descColor}>
+          <p class={`${descColor} relative z-10`}>
             {service.description}
           </p>
         </div>

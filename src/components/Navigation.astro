@@ -23,7 +23,12 @@ const {
     <div class="flex items-center justify-between h-16 lg:h-20">
       <div class="flex items-center space-x-3">
         {logo && <img src={logo} alt={companyName} class="h-8 lg:h-10" />}
-        <span class={`font-bold text-xl lg:text-2xl ${textColor}`}>{companyName}</span>
+        <div>
+          <span class={`font-bold text-xl lg:text-2xl ${textColor} block`}>{companyName}</span>
+          {siteConfig.company.slogan && (
+            <span class={`text-xs lg:text-sm ${textColor} opacity-75`}>{siteConfig.company.slogan}</span>
+          )}
+        </div>
       </div>
       
       <div class="hidden md:flex items-center space-x-6">

@@ -1,4 +1,6 @@
 ---
+import { siteConfig } from '../config/site.config';
+
 export interface Props {
   companyName: string;
   year?: number;
@@ -22,9 +24,12 @@ const {
   <div class="container mx-auto px-4 lg:px-8">
     <div class="grid md:grid-cols-3 gap-8 mb-8">
       <div>
-        <h3 class="text-white font-bold text-xl mb-4">{companyName}</h3>
+        <h3 class="text-white font-bold text-xl mb-2">{companyName}</h3>
+        {siteConfig.company.slogan && (
+          <p class="text-amber-400 font-medium mb-4 italic">{siteConfig.company.slogan}</p>
+        )}
         <p class="text-sm">
-          Brindando servicios profesionales con excelencia y dedicación. Tu satisfacción es nuestra prioridad.
+          Somos fabricantes especializados en carpintería para el hogar. Cocinas integrales, closets, puertas, muebles de baño y más.
         </p>
       </div>
       

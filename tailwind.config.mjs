@@ -40,9 +40,9 @@ export default {
           accent: '#3b82f6'
         },
         carpentry: {
-          primary: '#92400e',
-          secondary: '#b45309',
-          accent: '#ca8a04'
+          primary: '#e6a34d',
+          secondary: '#f70200',
+          accent: '#d4912a'
         },
         plumbing: {
           primary: '#1e3a8a',

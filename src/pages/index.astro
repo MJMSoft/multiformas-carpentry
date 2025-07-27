@@ -17,48 +17,48 @@ const navLinks = [
 
 const services = [
   {
-    icon: '🏠',
-    title: 'Gabinetes a la Medida',
-    description: 'Gabinetes de cocina y baño hechos a mano, adaptados a su espacio, estilo y necesidades de almacenamiento con materiales premium.'
+    icon: '🍳',
+    title: 'Cocinas Integrales',
+    description: 'Fabricamos cocinas completas a medida con gabinetes superiores e inferiores, islas, despensas y todos los accesorios.'
   },
   {
-    icon: '🪑',
-    title: 'Fabricación de Muebles',
-    description: 'Muebles personalizados diseñados y construidos para durar generaciones, desde comedores hasta juegos de alcoba.'
+    icon: '👔',
+    title: 'Closets',
+    description: 'Diseñamos y fabricamos closets, walk-in closets y vestidores con organización inteligente y acabados premium.'
+  },
+  {
+    icon: '🚿',
+    title: 'Muebles de Baño',
+    description: 'Vanities, gabinetes y muebles de baño resistentes a la humedad con diseños modernos y funcionales.'
   },
   {
     icon: '🚪',
-    title: 'Instalación de Puertas y Ventanas',
-    description: 'Instalación experta y personalización de puertas interiores y exteriores, molduras y marcos de ventanas.'
+    title: 'Puertas',
+    description: 'Fabricación e instalación de puertas interiores y principales en diversos estilos y acabados de madera.'
   },
   {
-    icon: '🏗️',
-    title: 'Construcción de Terrazas',
-    description: 'Diseño y construcción de hermosos espacios al aire libre con madera compuesta o natural y pérgolas.'
+    icon: '📺',
+    title: 'Muebles de TV y Entretenimiento',
+    description: 'Centros de entretenimiento, paneles para TV y muebles multimedia diseñados a la medida de su espacio.'
   },
   {
-    icon: '🛠️',
-    title: 'Remodelaciones',
-    description: 'Remodelaciones interiores completas incluyendo pisos, molduras de corona, revestimientos y modificaciones estructurales.'
-  },
-  {
-    icon: '📐',
-    title: 'Carpintería Arquitectónica',
-    description: 'Carpintería arquitectónica de precisión incluyendo repisas de chimenea, muebles empotrados, estanterías y elementos decorativos.'
+    icon: '🏠',
+    title: 'Mobiliario General',
+    description: 'Bibliotecas, escritorios, repisas, comedores y todo tipo de muebles personalizados para su hogar.'
   }
 ];
 
 const stats = [
-  { number: '20', suffix: '+', label: 'Años de Experiencia' },
-  { number: '500', suffix: '+', label: 'Proyectos Completados' },
-  { number: '98', suffix: '%', label: 'Satisfacción del Cliente' },
-  { number: '10', suffix: ' años', label: 'de Garantía' }
+  { number: '15', suffix: '+', label: 'Años de Experiencia' },
+  { number: '800', suffix: '+', label: 'Proyectos Realizados' },
+  { number: '100', suffix: '%', label: 'Clientes Satisfechos' },
+  { number: '5', suffix: ' años', label: 'de Garantía' }
 ];
 
 const socialLinks = [
-  { platform: 'Instagram', url: '#', icon: '📷' },
-  { platform: 'Pinterest', url: '#', icon: '📌' },
-  { platform: 'Facebook', url: '#', icon: '📘' }
+  { platform: 'Instagram', url: 'https://www.instagram.com/multiformas_cali/', icon: '📷' },
+  { platform: 'Facebook', url: 'https://facebook.com/multiformascali', icon: '📘' },
+  { platform: 'WhatsApp', url: 'https://wa.me/573155611943', icon: '💬' }
 ];
 ---
 
@@ -70,17 +70,17 @@ const socialLinks = [
   />
   
   <HeroTwoColumn 
-    title="Creando Excelencia en Cada Detalle"
-    subtitle="Transforme su visión en realidad con carpintería experta y ebanistería fina que combina la artesanía tradicional con precisión moderna"
-    ctaText="Cotización Gratis"
+    title="Fabricamos Espacios a tu Medida"
+    subtitle="Somos fabricantes especializados en cocinas integrales, closets, puertas, muebles de baño y todo el mobiliario para tu hogar"
+    ctaText="Solicitar Cotización"
     image="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2000"
-    imageAlt="Carpintero trabajando en detalle de madera"
+    imageAlt="Carpintería moderna en Cali"
     accentColor="from-carpentry-primary to-carpentry-secondary"
   />
   
   <Services 
-    title="Nuestra Experiencia"
-    subtitle="Desde el concepto hasta la finalización, hacemos realidad sus sueños en madera"
+    title="Nuestros Servicios"
+    subtitle="Soluciones integrales en carpintería para hogares y empresas en Cali y el Valle del Cauca"
     services={services}
     bgColor="bg-amber-50"
     cardStyle="elevated"
@@ -90,10 +90,10 @@ const socialLinks = [
   <section class="py-20 bg-white" id="portfolio">
     <div class="container mx-auto px-4 lg:px-8">
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4 animate-on-scroll">
-        Nuestros Últimos Proyectos
+        Proyectos Destacados
       </h2>
       <p class="text-xl text-gray-600 text-center mb-12 animate-on-scroll">
-        Mostrando el arte de la ebanistería fina
+        Calidad y diseño que transforman espacios en Cali
       </p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="group relative overflow-hidden rounded-2xl shadow-lg animate-on-scroll">
@@ -104,8 +104,8 @@ const socialLinks = [
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
             <div class="p-6 text-white">
-              <h3 class="text-xl font-bold mb-1">Gabinetes de Cocina Modernos</h3>
-              <p class="text-sm">Gabinetería de nogal personalizada con cajones de cierre suave</p>
+              <h3 class="text-xl font-bold mb-1">Cocina Integral Moderna</h3>
+              <p class="text-sm">Diseño minimalista con acabados de alta calidad</p>
             </div>
           </div>
         </div>
@@ -117,8 +117,8 @@ const socialLinks = [
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
             <div class="p-6 text-white">
-              <h3 class="text-xl font-bold mb-1">Juego de Sala Personalizado</h3>
-              <p class="text-sm">Muebles de roble hechos a mano con tapicería personalizada</p>
+              <h3 class="text-xl font-bold mb-1">Muebles de Sala Exclusivos</h3>
+              <p class="text-sm">Diseños únicos que combinan confort y elegancia</p>
             </div>
           </div>
         </div>
@@ -130,8 +130,8 @@ const socialLinks = [
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
             <div class="p-6 text-white">
-              <h3 class="text-xl font-bold mb-1">Terraza y Pérgola Exterior</h3>
-              <p class="text-sm">Terraza de cedro con iluminación integrada y asientos</p>
+              <h3 class="text-xl font-bold mb-1">Closet Walk-in Premium</h3>
+              <p class="text-sm">Organización inteligente con acabados de lujo</p>
             </div>
           </div>
         </div>
@@ -142,43 +142,43 @@ const socialLinks = [
   <section class="py-20 bg-gradient-to-br from-carpentry-primary to-carpentry-secondary text-white" id="process">
     <div class="container mx-auto px-4 lg:px-8">
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 animate-on-scroll">
-        Nuestro Proceso de Artesanía
+        Cómo Trabajamos
       </h2>
       <div class="grid md:grid-cols-4 gap-8">
         <div class="text-center animate-on-scroll">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
             <span class="text-3xl">📐</span>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Consulta de Diseño</h3>
-          <p class="text-white/80">Discutimos su visión, tomamos medidas y creamos planos detallados</p>
+          <h3 class="text-xl font-semibold mb-2">Asesoría Personalizada</h3>
+          <p class="text-white/80">Visitamos su espacio, escuchamos sus ideas y diseñamos juntos</p>
         </div>
         <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
             <span class="text-3xl">🪵</span>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Selección de Materiales</h3>
-          <p class="text-white/80">Elija entre maderas duras premium y materiales de calidad para su proyecto</p>
+          <h3 class="text-xl font-semibold mb-2">Materiales de Calidad</h3>
+          <p class="text-white/80">Trabajamos con las mejores maderas y acabados del mercado</p>
         </div>
         <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
             <span class="text-3xl">🔨</span>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Elaboración Experta</h3>
-          <p class="text-white/80">Nuestros artesanos calificados dan vida a su proyecto con precisión</p>
+          <h3 class="text-xl font-semibold mb-2">Fabricación Profesional</h3>
+          <p class="text-white/80">Nuestro equipo experto fabrica cada pieza con dedicación</p>
         </div>
         <div class="text-center animate-on-scroll" style="animation-delay: 0.3s;">
           <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
             <span class="text-3xl">✨</span>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Toques Finales</h3>
-          <p class="text-white/80">Acabado e instalación profesional con atención a cada detalle</p>
+          <h3 class="text-xl font-semibold mb-2">Instalación Garantizada</h3>
+          <p class="text-white/80">Entregamos e instalamos con la mayor calidad y garantía</p>
         </div>
       </div>
     </div>
   </section>
   
   <Stats 
-    title="Construido con Confianza y Calidad"
+    title="Nuestra Experiencia en Números"
     stats={stats}
     bgColor="bg-amber-50"
     accentColor="from-carpentry-primary to-carpentry-accent"
@@ -189,35 +189,35 @@ const socialLinks = [
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="animate-on-scroll">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            ¿Por Qué Elegir Maestros Carpinteros?
+            ¿Por Qué Elegir Multiformas Cali?
           </h2>
           <div class="space-y-4">
             <div class="flex items-start space-x-4">
               <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">Materiales Sostenibles</h3>
-                <p class="text-gray-600">Obtenemos madera ecológica de bosques certificados sostenibles.</p>
+                <h3 class="font-semibold text-gray-900 mb-1">Diseños Personalizados</h3>
+                <p class="text-gray-600">Cada proyecto es único, adaptado a sus gustos y necesidades específicas.</p>
               </div>
             </div>
             <div class="flex items-start space-x-4">
               <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">Técnicas Tradicionales</h3>
-                <p class="text-gray-600">Métodos de ensamblaje tradicionales que garantizan muebles que duran generaciones.</p>
+                <h3 class="font-semibold text-gray-900 mb-1">Calidad Garantizada</h3>
+                <p class="text-gray-600">Utilizamos los mejores materiales y técnicas para asegurar durabilidad.</p>
               </div>
             </div>
             <div class="flex items-start space-x-4">
               <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">Servicio de Diseño Personalizado</h3>
-                <p class="text-gray-600">Consultas gratuitas de diseño 3D para visualizar su proyecto antes de construir.</p>
+                <h3 class="font-semibold text-gray-900 mb-1">Atención Profesional</h3>
+                <p class="text-gray-600">Equipo experto que lo acompaña desde el diseño hasta la instalación.</p>
               </div>
             </div>
             <div class="flex items-start space-x-4">
               <div class="w-6 h-6 rounded-full bg-carpentry-primary flex-shrink-0 mt-1"></div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">Garantía de 10 Años</h3>
-                <p class="text-gray-600">Nuestra artesanía está respaldada por una garantía integral.</p>
+                <h3 class="font-semibold text-gray-900 mb-1">Respaldo Total</h3>
+                <p class="text-gray-600">5 años de garantía en todos nuestros trabajos de carpintería.</p>
               </div>
             </div>
           </div>
@@ -229,8 +229,8 @@ const socialLinks = [
             class="rounded-2xl shadow-2xl"
           />
           <div class="absolute -bottom-6 -right-6 bg-carpentry-secondary text-white p-6 rounded-2xl shadow-xl">
-            <p class="text-3xl font-bold">20+</p>
-            <p class="text-sm">Años de Excelencia</p>
+            <p class="text-3xl font-bold">15+</p>
+            <p class="text-sm">Años en el Mercado</p>
           </div>
         </div>
       </div>
@@ -238,17 +238,17 @@ const socialLinks = [
   </section>
   
   <Contact 
-    title="Comience Su Proyecto Hoy"
-    subtitle="Obtenga una consulta gratuita y cotización para su proyecto de carpintería personalizado"
-    phone="318-MADERA"
-    email="info@maestroscarpinteros.com.co"
-    address="Carrera 15 #82-45, Bogotá, Colombia"
+    title="¡Cotiza Tu Proyecto Ahora!"
+    subtitle="Recibe asesoría personalizada y transforma tus espacios con los mejores muebles de Cali"
+    phone="315 5611943"
+    email="info@multiformascali.com"
+    address="Tv. 29 #24B-43, Santa Monica Popular, Cali, Valle del Cauca"
     bgColor="bg-amber-50"
     accentColor="from-carpentry-primary to-carpentry-secondary"
   />
   
   <Footer 
-    companyName="Maestros Carpinteros"
+    companyName="Multiformas Cali"
     links={navLinks}
     socials={socialLinks}
     bgColor="bg-gray-900"

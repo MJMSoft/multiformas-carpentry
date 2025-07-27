@@ -44,33 +44,33 @@ export interface SiteConfig {
 // Configuración por defecto - PERSONALIZA ESTOS VALORES PARA CADA CLIENTE
 export const siteConfig: SiteConfig = {
   company: {
-    name: "LOGO",
-    slogan: "Tu Slogan Aquí",
+    name: "Multiformas Cali",
+    slogan: "Muebles que innovan tu hogar",
     logo: "/images/logo.png", // Coloca el logo en public/images/logo.png
-    phone: "555-123-4567",
-    email: "info@tuempresa.com",
-    address: "Tu Dirección, Ciudad, País",
-    whatsapp: "+1234567890"
+    phone: "315 5611943",
+    email: "info@multiformascali.com",
+    address: "Tv. 29 #24B-43, Santa Monica Popular, Cali, Valle del Cauca",
+    whatsapp: "+573155611943"
   },
   
   colors: {
-    primary: "#92400e",      // amber-800
-    secondary: "#451a03",    // amber-950
-    accent: "#f59e0b",       // amber-500
-    primaryDark: "#451a03",  // amber-950
-    primaryLight: "#d97706"  // amber-600
+    primary: "#e6a34d",      // Color dorado/amarillo
+    secondary: "#f70200",    // Color rojo
+    accent: "#d4912a",       // Dorado más oscuro
+    primaryDark: "#c8862a",  // Dorado oscuro
+    primaryLight: "#f4c076"  // Dorado claro
   },
   
   seo: {
-    title: "LOGO - Tu Título SEO Aquí",
-    description: "Descripción de tu empresa y servicios para los motores de búsqueda.",
-    keywords: "palabras, clave, de, tu, negocio"
+    title: "Multiformas Cali - Muebles que innovan tu hogar",
+    description: "Carpintería profesional en Cali. Diseñamos y fabricamos muebles a medida, cocinas integrales, closets y más. Calidad garantizada.",
+    keywords: "carpintería cali, muebles a medida cali, cocinas integrales, closets, muebles personalizados, multiformas cali"
   },
   
   social: {
-    facebook: "https://facebook.com/tuempresa",
-    instagram: "https://instagram.com/tuempresa",
-    pinterest: "https://pinterest.com/tuempresa"
+    facebook: "https://facebook.com/multiformascali",
+    instagram: "https://www.instagram.com/multiformas_cali/",
+    pinterest: "https://pinterest.com/multiformascali"
   },
   
   category: 'carpentry'
